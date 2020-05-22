@@ -1,5 +1,5 @@
-# NoDB Project
-## Note Store Application
+# NoDb Project
+## Sticky Note Application
 
 ### Application Concept
 - This app allows you to create, store, edit, and delete your notes.
