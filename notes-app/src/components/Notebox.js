@@ -1,26 +1,22 @@
 import React from 'react';
+import editBtn from '../buttons/editBtn.png'
+import deleteBtn from '../buttons/deleteBtn.png'
+
 
 export default function NoteBoxes(props) {
     return (
-        <div className="boxes">
+        <div style={{display: "flexbox"}} id="boxes">
         {console.log(props.notes)}
-            <ul className="notes">
-                <li className="note note-1">
-                    <h3>{props.notes.title}</h3>
-                    <h4>{props.notes.date}</h4>
-                    <p>{props.notes.note}</p>
-                </li>
-                <li className="note note-2">
-                    <h3>{props.notes.title}</h3>
-                    <h4>{props.notes.date}</h4>
-                    <p>{props.notes.note}</p>
-                </li>
-                <li className="note note-3"></li>
-                <li className="note note-4"></li>
-                <li className="note note-5"></li>
-                <li className="note note-6"></li>
-            </ul>
-        )
+            <div className="notes">
+                <div className="note-header">
+                    <h3 className="note-title">{props.notes.title}</h3>
+                    <img className="btn editBtn" src={editBtn} alt="delete"/>
+                    <img className="btn deleteBtn" src={deleteBtn} alt="delete" />
+                </div>
+                    <h4 className="note-date">{props.notes.date}</h4>
+                    <p className="note-content">{props.notes.note}</p>
+            </div>
         </div>
-    )
+        )
+    
 }

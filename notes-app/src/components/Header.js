@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // date variables
 const today = new Date()
 const month = today.getMonth() + 1
@@ -14,6 +15,8 @@ function Header() {
                 <h1 className="name">Caden's Notes</h1>
                 <h1 className="date"> {`${currentDate}`} </h1>
             </header>
+            
+            
         </div>
         )
 }

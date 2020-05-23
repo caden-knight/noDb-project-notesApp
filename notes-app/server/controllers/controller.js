@@ -37,10 +37,10 @@ module.exports = {
     createNewNote: (req, res) => { 
         const {title, date, note} = req.body
         const newNote = {
-            id, title, date: new Date(), note
+            id, title, date, note
         }
         id++
-        userNotes.push(newNote)
+        userNotes.unshift(newNote)
         res.status(200).send(userNotes)
     },
 

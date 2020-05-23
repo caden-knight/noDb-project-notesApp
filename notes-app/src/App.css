@@ -10,22 +10,63 @@
 }
 
 .App {
+  margin: 0px;
 }
+
+
 
 body {
   background-color: #C4C4C4;
-
 }
 .header {
-  background-color: #ffffff ;
+  background-color: #ffffff;
   height: 256px;
   width: 100vw;
   display: flex;
   font-size: 64px;
   font-family: 'Montserrat', sans-serif;
-  margin: 0;
   align-items: center;
 }
+
+.addBtn {
+  position: absolute;
+  right: 0px;
+  margin-bottom: 100px;
+  height: 85px;
+  width: 85px;
+}
+
+.input-field {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 85px;
+  margin-right: 100vw;
+}
+.inp{
+  font-size: 24px;
+  justify-content: center;
+  margin: 5px;
+}
+
+.inp-note {
+  height: 198px;
+}
+
+.submit {
+  height: 50px;
+  width: 254px;
+  background-color:greenyellow;
+
+}
+.cancel{
+  background-color: darkred;
+  color: white;
+  font-size: 16px;
+  width: 254px;
+  height: 30px;
+}
+
 .name {
   width: fit-content;
   height: 75px;
@@ -40,39 +81,49 @@ body {
   margin-right: 133px;
 }
 
-.notes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.note {
-  margin: 25px 45px 45px 37.5px;
+#boxes {
+  display: inline-flex;
   background-color: #ffffff;
-  height: 274px;
-  width: 331px;
+  height: 350px;
+  width: 400px;
   box-shadow: 5px 10px 7px rgb(102, 100, 100) ;
+  font-family: "Montserrat";
+  margin: 0px 45px 45px 37.5px;
+  
 }
 
-.note-1{
-  margin-top: 75px;
-  margin-left: 75px;
+.add-btn-space {
+  height: 85px;
+  width: 100vw;
 }
 
-.note-2{
-  margin-top: 75px;
+.note-header {
+  display: inline-flex;
+  margin-bottom: 20px;
 }
 
-.note-3{
-  margin-top: 75px;
-  margin-right: 90px;
+.btn {
+  
+  height: 36px;
+  width: 36px;
 }
 
-.note-4{
-  margin-left: 75px;
+.note-title {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 10px;
+  width: fit-content;
+}
+.note-date{
+  font-size: 24px;
+  margin: 0px 50px 20px 50px
 }
 
+.note-content {
+  font-size: 20px;
+  margin: 0px 50px 0px 50px;
+  height: 200px;
+  overflow: hidden;
 
-.note-6{
-  margin-right: 90px;
 }
+
