@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header'
 import NoteBox from './components/Notebox'
 import axios from 'axios'
-import addBtn from './buttons/add-btn.svg'
+import CreateNew from './components/CreateNew';
 
 
 class App extends React.Component {
@@ -14,21 +14,21 @@ class App extends React.Component {
       userNotes: [],
       noteClicked: false,
       creating: false,
-      userInputTitle: "",
-      userInputDate: "",
-      UserInputNote: ""
+      
     }
     this.componentDidMount = this.componentDidMount.bind(this)
-    this.dateSort = this.dateSort.bind(this)
-    this.nameSort = this.nameSort.bind(this)
+    this.createToggle = this.createToggle.bind(this)
+    this.createNew = this.createNew.bind(this)
+    this.editNote = this.editNote.bind(this)
+    this.deleteNote = this.deleteNote.bind(this)
   }
   componentDidMount() { 
-    console.log('Mounted Blade')
     axios.get('/api/notes')
       .then(res => {
         this.setState({ userNotes: res.data })
     })
   }
+
   createNew(title, date, note) { 
     const body = {title, date, note}
     axios.post('api/notes', body)
@@ -39,70 +39,65 @@ class App extends React.Component {
       })
     this.createToggle()
   }
-  editNote() { }
-  deleteNote() { }
   createToggle() { 
     const {creating} = this.state
     this.setState({
       creating: !creating
     })
-  }
-  createTitle(title) {
-    this.setState({
-      userInputTitle: title.target.value
-    })
-
-  }
-
-  createDate(date) {
-    this.setState({
-      userInputDate: date.target.value
-    })
+}
+  editNote(id, title, date, note) { 
+    const body = {title, date, note}
+    axios.put(`/api/notes/${id}`, body)
+      .then((res => {
+      this.setState({userNotes: res.data})
+      }))
   }
 
-  createNote(note) {
-    this.setState({
-      userInputNote: note.target.value
-    })
-  }
+
+  deleteNote(id) { }
 
   dateSort() { }
   nameSort() { }
   
   
   render() {
+    const { userNotes } = this.state
+    const { creating } = this.state
+
     const notes = this.state.userNotes.map(note => {
       return (
         
         <NoteBox key={note.id}
           notes={note}
-          add={this.createNew}/>
+          notesArr={userNotes}
+          editNote={this.editNote}
+          delete={this.deleteNote}
+          
+        />
+
+        
+        
+        )
+      })
       
-      )
-    })
-    const { userNotes } = this.state
-    const newTitle = this.state.userInputTitle
-    const newDate = this.state.userInputDate
-    const newNote = this.state.userInputNote
-    
-    console.log(this.state.userNotes)
-    return <div className="App">
+      console.log(this.state.userNotes)
+      return <div className="App">
       <Header
         notes={userNotes}
-        addNote={this.createNew}
       />
-      {!this.state.creating ? <p className="add-btn-space">
-        <img onClick={() => this.createToggle()} className="addBtn" src={addBtn} alt="add-button" />
-      </p> : <div className="input-field">
-          <input onChange={(title) => this.createTitle(title)} placeholder="Create a Title" className="inp inp-title"></input>
-          <input onChange={(date) => this.createDate(date)} placeholder="Enter Date" className="inp inp-date"></input>
-          <input onChange={(note) => this.createNote(note)} placeholder="Your note goes here..." className="inp inp-note"></input>
-          <button onClick={() => this.createNew(newTitle, newDate, newNote)} className="submit">Post Note</button>
-          <button onClick={() => { this.createToggle() }} className="cancel">Cancel</button>
-          {console.log(this.state.userInputTitle)}
-      </div> }
+      
+      <CreateNew
+        notes={userNotes}
+        addNote={this.createNew}
+        isCreating={creating}
+        toggle={this.createToggle}
+
+      
+      />
       
       {notes}
+     
+
       
 
        

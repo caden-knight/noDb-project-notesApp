@@ -49,6 +49,10 @@ body {
   margin: 5px;
 }
 
+.inp-title {
+  font-size: 20px;
+}
+
 .inp-note {
   height: 198px;
 }
@@ -109,7 +113,7 @@ body {
 }
 
 .note-title {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
   padding: 10px;
   width: fit-content;

@@ -13,5 +13,5 @@ const param = '/api/notes/:note_id'
 app.get(baseUrl, noteCtrl.getAllNotes)
 app.get(param, noteCtrl.getOneNote)
 app.post(baseUrl, noteCtrl.createNewNote)
-app.put(param, noteCtrl.editNote)
+app.put('/api/notes/:note_id', noteCtrl.editNote)
 app.delete(param, noteCtrl.deleteNote)

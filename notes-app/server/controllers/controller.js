@@ -31,7 +31,12 @@ module.exports = {
             dateModified: new Date(),
             note: note || userNotes[index].note
         }
-        res.status(200).send(updatedNote)
+
+        userNotes.splice(index, 1)
+        userNotes.unshift(updatedNote)
+
+
+        res.status(200).send(userNotes)
     },
 
     createNewNote: (req, res) => { 
