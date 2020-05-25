@@ -32,8 +32,7 @@ module.exports = {
             note: note || userNotes[index].note
         }
 
-        userNotes.splice(index, 1)
-        userNotes.unshift(updatedNote)
+        userNotes.splice(index, 1, updatedNote)
 
 
         res.status(200).send(userNotes)

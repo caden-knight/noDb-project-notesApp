@@ -43,9 +43,9 @@ export default class CreateNew extends Component {
       </p> : <div className="input-field">
           <input onChange={(title) => this.createTitle(title)} maxLength="20" placeholder="Title (max 20 characters)" className="inp inp-title"></input>
           <input onChange={(date) => this.createDate(date)} type="date" className="inp inp-date"></input>
-          <textarea onChange={(note) => this.createNote(note)} maxLength="220" placeholder="Your note goes here... (max 220 characters) " className="inp inp-note"></textarea>
+          <textarea onChange={(note) => this.createNote(note)} maxLength="220" placeholder="Write something awesome here... (max 220 characters) " className="inp inp-note"></textarea>
           <button onClick={() => { this.props.toggle() }} className="cancel">Cancel</button>
-          <button onClick={() => this.props.addNote(newTitle, newDate, newNote)} className="submit">Post It!</button>
+          <button onClick={() => this.props.addNote(newTitle, newDate, newNote)} className="submit">Create Note!</button>
           {console.log(this.props)}
         </div>}
             </div>

@@ -44,7 +44,8 @@ class App extends React.Component {
     this.setState({
       creating: !creating
     })
-}
+  }
+  
   editNote(id, title, date, note) { 
     const body = {title, date, note}
     axios.put(`/api/notes/${id}`, body)
@@ -52,7 +53,6 @@ class App extends React.Component {
       this.setState({userNotes: res.data})
       }))
   }
-
 
   deleteNote(id) {
     axios.delete(`/api/notes/${id}`)
@@ -63,8 +63,6 @@ class App extends React.Component {
       })
   }
 
-  
-  
   render() {
     const { userNotes } = this.state
     const { creating } = this.state
@@ -80,9 +78,6 @@ class App extends React.Component {
           rmText={this.removeText}
           
         />
-
-        
-        
         )
       })
       
@@ -96,17 +91,8 @@ class App extends React.Component {
           addNote={this.createNew}
           isCreating={creating}
           toggle={this.createToggle}
-  
-        
         />
-      
-      
       {notes}
-     
-
-      
-
-       
     </div>
   }
 }
