@@ -12,7 +12,7 @@ function Header() {
     return (
         <div>
             <header className="header">
-                <h1 className="name">Caden's Notes</h1>
+                <h1 className="name">Caden's Sticky Notes</h1>
                 <h1 className="date"> {`${currentDate}`} </h1>
             </header>
             

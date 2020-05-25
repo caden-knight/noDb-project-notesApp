@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import editBtn from '../buttons/editBtn.png'
-import deleteBtn from '../buttons/deleteBtn.png'
+import editBtn from '../buttons/editBtn.svg'
+import deleteBtn from '../buttons/deleteBtn.svg'
 
 class Edit extends Component {
     constructor() {
@@ -14,7 +14,6 @@ class Edit extends Component {
     }
 
     editTheNote() {
-        this.props.
         this.toggleEditing()
     }
     toggleEditing() {
@@ -40,24 +39,38 @@ class Edit extends Component {
             editInputNote: note.target.value
         })
     }
+
+    
     
     render() {
         const noteId = this.props.notes.id
         const editedTitle = this.state.editInputTitle
         const editedDate = this.state.editInputDate
         const editedNote = this.state.editInputNote
-        const {editing} = this.state
+        const { editing } = this.state
+        const title = this.props.title
+        const date = this.props.date
+        const content = this.props.content
         return (  
             <div className="edit-delete">
-                {!editing ? <img src={editBtn}className="editBtn" onClick={() => this.toggleEditing()} alt="edit-btn" /> :
-                    <div className="edit-field">
-                        <input onChange={(title) => this.editTitle(title)} maxLength="20" placeholder="Title (max 20 characters)" className="inp edit-title"></input>
-                        <input onChange={(date) => this.editDate(date)} placeholder="MM/DD/YYYY" className="inp edit-date"></input>
-                        <input onChange={(note) => this.editContent(note)} placeholder="Your note goes here..." className="inp edit-note"></input>
-                        <button onClick={() => { this.props.editNote(noteId, editedTitle, editedDate, editedNote); this.toggleEditing() } } className="submit">Edit Note</button>
-                        <button onClick={() => { this.toggleEditing()}} className="cancel">Cancel</button>
-        </div>}
-                <img className="btn deleteBtn" src={deleteBtn} alt="delete" />
+
+                {!editing ?
+                    <div className="buttons">
+                        <img src={editBtn} className="btn editBtn" onClick={() => { this.toggleEditing(); }} alt="edit-btn" />
+                        <img onClick={() =>  this.props.delete(noteId)  } className="btn deleteBtn" src={deleteBtn} alt="delete" /> 
+                    </div>
+                    :
+                    <form className="edit-field">
+                        
+                            <input onChange={(title) => this.editTitle(title)} maxLength="20" placeholder="Title (max 20 characters)" className="edit-inp edit-title"></input>
+                        
+                        <input onChange={(date) => this.editDate(date)} type="date" className="edit-inp edit-date"></input>
+                        <textarea onChange={(note) => this.editContent(note)} placeholder="Your note goes here... (max 220 characters)" maxLength="220"  className="edit-inp edit-note"></textarea>
+                        <button onClick={() => { this.toggleEditing()}} className="edit-btn edit-cancel">Cancel</button>
+                        <button onClick={() => { this.props.editNote(noteId, editedTitle, editedDate, editedNote); this.toggleEditing() } } className="edit-btn edit-submit">Finish</button>
+        </form>}
+        
+       
             </div>
         );
     }

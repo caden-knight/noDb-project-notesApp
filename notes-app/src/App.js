@@ -54,10 +54,15 @@ class App extends React.Component {
   }
 
 
-  deleteNote(id) { }
+  deleteNote(id) {
+    axios.delete(`/api/notes/${id}`)
+      .then(res => {
+        this.setState({
+          userNotes: res.data
+        })
+      })
+  }
 
-  dateSort() { }
-  nameSort() { }
   
   
   render() {
@@ -72,6 +77,7 @@ class App extends React.Component {
           notesArr={userNotes}
           editNote={this.editNote}
           delete={this.deleteNote}
+          rmText={this.removeText}
           
         />
 

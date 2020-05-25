@@ -5,6 +5,22 @@
   src: url('./fonts/Montserrat-Regular.ttf')
 }
 
+@font-face {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/RobotoCondensed-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'Ubuntu', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Ubuntu-Medium.ttf')
+}
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -16,66 +32,118 @@
 
 
 body {
-  background-color: #C4C4C4;
+  background-color: #EAEAEA;
 }
+
 .header {
   background-color: #ffffff;
-  height: 256px;
+  height: 225px;
   width: 100vw;
   display: flex;
   font-size: 64px;
   font-family: 'Montserrat', sans-serif;
   align-items: center;
-}
-
-.addBtn {
-  position: absolute;
-  right: 0px;
-  margin-bottom: 100px;
-  height: 85px;
-  width: 85px;
-}
-
-.input-field {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 85px;
-  margin-right: 100vw;
-}
-.inp{
-  font-size: 24px;
-  justify-content: center;
-  margin: 5px;
-}
-
-.inp-title {
-  font-size: 20px;
-}
-
-.inp-note {
-  height: 198px;
-}
-
-.submit {
-  height: 50px;
-  width: 254px;
-  background-color:greenyellow;
-
-}
-.cancel{
-  background-color: darkred;
-  color: white;
-  font-size: 16px;
-  width: 254px;
-  height: 30px;
+  margin-bottom: 25px;
 }
 
 .name {
-  width: fit-content;
+  background-color: blue;
+  color: #ffffff;
+  text-align: right;
+  font-family: "Ubuntu";
+  font-size: 42px;
+  font-weight: 700;
+  padding: 14px;
+  width: 650px;
   height: 75px;
-  margin-left: 133px;
+  border-radius: 0px 50px 50px 0px;
+  padding-right: 75px;
 }
+
+.addBtn {
+  fill: #ffffff;
+  height: 50px;
+  width: 50px;
+}
+
+
+.input-field {
+  padding: 5px;
+  position: relative;
+  height: 350px;
+  width: 400px;
+  background-color: #ffffff ;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+    .create-note {
+      color: blue;
+      display: inline-flex;
+      justify-content: space-evenly;
+      width: fit-content;
+      margin: 0px 45px 45px 37.5px;
+    }
+
+.inp {
+  height: 400px;
+  width: 350px;
+  font-size: 24px;
+  border-left: double gray;
+  border-bottom: solid gray;
+  border-radius: 10px;
+  height: 400px;
+  width: 350px;
+  font-size: 24px;
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.inp-title {
+  font-size: 24px;
+  height: fit-content;
+}
+
+.inp-date {
+  height: fit-content;
+}
+
+.inp-note {
+  height: 150px;
+  width: 350px;
+}
+
+
+
+
+.submit {
+  right: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 24px;
+  color: black;
+  height: 35px;
+  width: 150px;
+  background-color: blue;
+  color: #ffffff ;
+}
+  
+.cancel{
+  left: 125px;
+  background-color: darkred;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+  width: 150px;
+  height: 35px;
+}
+
 
 .date {
   width: fit-content;
@@ -85,49 +153,138 @@ body {
   margin-right: 133px;
 }
 
+.add-btn-space {
+  height: 40px;
+  width: 100vw;
+}
+
 #boxes {
   display: inline-flex;
   background-color: #ffffff;
   height: 350px;
   width: 400px;
-  box-shadow: 5px 10px 7px rgb(102, 100, 100) ;
+  box-shadow: 10px 10px 7px #dfdfdf;
   font-family: "Montserrat";
   margin: 0px 45px 45px 37.5px;
   
 }
 
-.add-btn-space {
-  height: 85px;
-  width: 100vw;
+.notes {
+  height: 350px;
+  width: 400px;
+  overflow: hidden;
 }
 
 .note-header {
   display: inline-flex;
   margin-bottom: 20px;
+  align-items: center;
+}
+
+
+.wordBox {
+  margin: 0px 50px 25px 50px
 }
 
 .btn {
-  
   height: 36px;
   width: 36px;
+  display: inline-block;
+  font-size: 20px;
+  
 }
-
 .note-title {
+  margin-bottom: 25px;
+  display: inline-flex;
   font-size: 28px;
   font-weight: 700;
-  padding: 10px;
   width: fit-content;
 }
 .note-date{
   font-size: 24px;
-  margin: 0px 50px 20px 50px
+  margin-bottom: 25px;
+  
 }
 
 .note-content {
   font-size: 20px;
-  margin: 0px 50px 0px 50px;
-  height: 200px;
+  height: 175px;
   overflow: hidden;
+}
 
+.edit-field {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 5px;
+  position: relative;
+  height: 350px;
+  width: 400px;
+  background-color: #ffffff;
+  align-items: center;
+}
+
+.edit-inp{
+  border-left: double gray;
+  border-bottom: solid gray;
+  border-radius: 10px;
+  height: 400px;
+  width: 350px;
+  font-size: 24px;
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttons{
+  margin-left: 300px;
+  background-color: rgb(0, 0, 255);
+  border-radius:  0 0 0 25px;
+}
+
+.editBtn {
+  margin-left: 15px;
+  
+}
+
+
+
+.edit-title {
+  margin-top: 15px;
+  height: 36px;
+}
+
+.edit-date {
+  height: fit-content;
+}
+
+.edit-note {
+  height: 150px;
+  width: 350px;
+  font-size: 20px;
+}
+
+.edit-submit{
+  
+  right: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 24px;
+  color: black;
+  height: 35px;
+  width: 150px;
+  background-color: blue;
+  color: #ffffff ;
+}
+
+.edit-cancel {
+  left: 125px;
+  background-color: darkred;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+  width: 150px;
+  height: 35px;
 }
 

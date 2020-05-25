@@ -16,9 +16,9 @@ module.exports =
     
     {
         id: 2,
-        title: "Node Ananlogy",
+        title: "Node Analogy",
         date: "May 18, 2020",
-        note: "At at restaurant there is a server  the server does essentially the same thing as that server the server gives a menu saying this is what i can do for you you request something the server goes to the back (like the database) they perform the action you wanted and comes back with what you wanted if they don’t have it they’ll come back and say we don’t have coke"
+        note: "At at restaurant there is a server  the server does essentially the same thing as that server the server gives a menu saying this is what i can do for you you request something the server goes to the back (like the database)"
     },
     
     {
@@ -39,6 +39,6 @@ module.exports =
         id: 5,
         title: "Media Queries",
         date: "May 20, 2020",
-        note: "used to style responsively you can tag items within the @media code/styling block They allow to dictate styles for different screen widths They can take two main values: min-width and max-width You can change styles based on the min and max widths  when they are met the style will change"
+        note: "used to style responsively you can tag items within the @media code/styling block They allow to dictate styles for different screen widths They can take two main values: min-width and max-width"
     }
 ]
