@@ -91,15 +91,15 @@ class App extends React.Component {
       <Header
         notes={userNotes}
       />
+        <CreateNew
+          notes={userNotes}
+          addNote={this.createNew}
+          isCreating={creating}
+          toggle={this.createToggle}
+  
+        
+        />
       
-      <CreateNew
-        notes={userNotes}
-        addNote={this.createNew}
-        isCreating={creating}
-        toggle={this.createToggle}
-
-      
-      />
       
       {notes}
      

@@ -13,7 +13,8 @@ function Header() {
         <div>
             <header className="header">
                 <h1 className="name">Caden's Sticky Notes</h1>
-                <h1 className="date"> {`${currentDate}`} </h1>
+                <h2 className="date"> {`${currentDate}`} </h2>
+                <p className="add-a-note">Click Add to Create a New Note</p>
             </header>
             
             
